@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:notes_keeper_getx/temes_service.dart';
 import 'screens/splash_screen.dart';
 import 'themes.dart';
+import './routes/app_routes.dart';
 
 void main() async {
   await GetStorage.init();
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeService().theme,
+      // initialRoute: RouteApp.SPLASHSCREEN,
       home: SplashScreen(),
     );
   }

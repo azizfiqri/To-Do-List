@@ -15,11 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 3), () {
-      Get.to(
-        () => HomeScreen(),
-        // transition: Transition.rightToLeft,
-        // duration: Duration(seconds: 2),
-      );
+      Get.off(HomeScreen());
+      // transition: Transition.rightToLeft,
+      // duration: Duration(seconds: 2),
     });
     super.initState();
   }

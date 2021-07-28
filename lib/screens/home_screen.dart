@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("To Do List"),
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: ThemeService().switchTheme,
@@ -163,7 +163,8 @@ class HomeScreen extends StatelessWidget {
                                 onPressed: () {
                                   Get.to(() => UpdateNoteScreen(), arguments: [
                                     data[i].reference,
-                                    data[i]["text"]
+                                    data[i]["text"],
+                                    data[i]["desc"],
                                   ]);
                                 },
                               ),
@@ -176,6 +177,7 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                           leading: Checkbox(
+                            shape: CircleBorder(),
                             value: data[i]["completed"] == true ? true : false,
                             onChanged: (val) {
                               noteController.toggleTask(

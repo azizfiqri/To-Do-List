@@ -10,10 +10,11 @@ class NoteController extends GetxController {
 
   Stream<QuerySnapshot> notesStream;
 
-  insertNote(String note) {
+  insertNote(String note, String desc) {
     FirebaseFirestore.instance.collection('notes').add({
       'completed': false,
       'text': note,
+      'desc': desc,
     });
     Get.back();
     Get.snackbar(
@@ -42,9 +43,10 @@ class NoteController extends GetxController {
     );
   }
 
-  updateNote(var ref, String data) {
+  updateNote(var ref, String data, String desc) {
     ref.update({
       'text': data,
+      'desc': desc,
     });
     Get.back();
     Get.snackbar(
