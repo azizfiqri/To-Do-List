@@ -21,13 +21,6 @@ class CreateNoteScreen extends GetView<NoteController> {
           child: Column(
             children: [
               TextFormField(
-                validator: (value) {
-                  if (noteFieldController.text == null ||
-                      noteFieldController.text.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
                 maxLength: 40,
                 cursorColor: Colors.green,
                 controller: noteFieldController,
